@@ -43,7 +43,7 @@ def main():
     elif mode == "train":
         perform_training(output_path, config)
     elif mode == "diagnose":
-        perform_diagnostics(output_path)
+        perform_diagnostics(output_path, config)
     elif mode == "compress":
         perform_compression(output_path, config)
     elif mode == "decompress":
@@ -126,13 +126,13 @@ def perform_training(output_path, config):
     )
 
 
-def perform_diagnostics(project_path):
+def perform_diagnostics(project_path, config):
     print("Performing diagnostics...")
     output_path = os.path.join(project_path, "plotting")
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    input_path = os.path.join(project_path, "training", "activations.npy")
-    helper.diagnose(input_path, output_path)
+    # input_path = os.path.join(project_path, "training", "activations.npy")
+    helper.diagnose(project_path, output_path, config)
 
 
 def perform_plotting(output_path, config):

@@ -7,7 +7,7 @@ def set_config(c):
     c.compression_ratio = 1.6
     c.apply_normalization = True
     c.model_name = "AE"
-    c.epochs = 25
+    c.epochs = 500
     c.lr = 0.001
     c.batch_size = 512
     c.early_stopping = True
@@ -15,13 +15,13 @@ def set_config(c):
 
     # === Additional configuration options ===
 
-    c.early_stopping_patience = 100
+    c.early_stopping_patience = 10000
     c.min_delta = 0
     c.lr_scheduler_patience = 50
     c.custom_norm = False
     c.reg_param = 0.001
     c.RHO = 0.05
-    c.test_size = 0
+    c.test_size = 1
     # c.number_of_columns = 24
     # c.latent_space_size = 15
     c.extra_compression = False
@@ -30,7 +30,7 @@ def set_config(c):
     c.mse_avg = False
     c.mse_sum = True
     c.emd = False
-    c.l1 = True
+    c.l1 = False
     c.activation_extraction = True
     c.deterministic_algorithm = False
     c.type_list = [

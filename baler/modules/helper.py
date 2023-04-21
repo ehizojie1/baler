@@ -558,11 +558,11 @@ def decompress(model_path, input_path, model_name, config):
     return decompressed, names, normalization_features
 
 
-def diagnose(input_path: str, output_path: str) -> None:
+def diagnose(input_path: str, output_path: str, config) -> None:
     """Calls diagnostics.diagnose()
 
     Args:
         input_path (str): path to the np.array contataining the activations values
         output_path (str): path to store the diagnostics pdf
     """
-    diagnostics.diagnose(input_path, output_path)
+    diagnostics.diagnose(input_path, output_path, config)
